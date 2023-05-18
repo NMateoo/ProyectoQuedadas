@@ -1,12 +1,12 @@
 package clases;
 
-public class Mascota extends CosaConNombre{
+public class Perro extends Mascota{
 	private String animal;
 	private Persona dueño;
-	public Mascota(String nombre, String animal, Persona dueño) {
-		super(nombre);
-		this.animal = animal;
-		this.dueño = dueño;
+	public Perro(String nombre, String animal, Persona dueño, String animal2, Persona dueño2) {
+		super(nombre, animal, dueño);
+		animal = animal2;
+		dueño = dueño2;
 	}
 	public String getAnimal() {
 		return animal;
@@ -22,6 +22,6 @@ public class Mascota extends CosaConNombre{
 	}
 	@Override
 	public String toString() {
-		return "Mascota [animal=" + animal + "]";
+		return "Perro [animal=" + animal + ", dueño=" + dueño + "]";
 	}
 }
