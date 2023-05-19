@@ -1,27 +1,29 @@
 package clases;
 
+import java.sql.SQLException;
+
+import enums.RazaPerro;
+
 public class Perro extends Mascota{
-	private String animal;
-	private Persona dueño;
-	public Perro(String nombre, String animal, Persona dueño, String animal2, Persona dueño2) {
+	private RazaPerro raza;
+
+	public Perro(String nombre, String animal, Persona dueño, RazaPerro raza)  throws SQLException{
 		super(nombre, animal, dueño);
-		animal = animal2;
-		dueño = dueño2;
+		this.raza = raza;
 	}
-	public String getAnimal() {
-		return animal;
+
+	public RazaPerro getRaza() {
+		return raza;
 	}
-	public void setAnimal(String animal) {
-		this.animal = animal;
+
+	public void setRaza(RazaPerro raza) {
+		this.raza = raza;
 	}
-	public Persona getDueño() {
-		return dueño;
-	}
-	public void setDueño(Persona dueño) {
-		this.dueño = dueño;
-	}
+
 	@Override
 	public String toString() {
-		return "Perro [animal=" + animal + ", dueño=" + dueño + "]";
+		return "Gato [raza=" + raza + "]";
 	}
+	
+	
 }

@@ -35,6 +35,15 @@ public class Ventana extends JFrame{
 		if(clase.equals(PantallaAñadirMascota.class)) {
 			this.setContentPane(new PantallaAñadirMascota(this));
 		}
+		if(clase.equals(PantallaAñadirActivi.class)) {
+			this.setContentPane(new PantallaAñadirActivi(this));
+		}
+		if(clase.equals(PantallaAñadirActiviMascota.class)) {
+			this.setContentPane(new PantallaAñadirActiviMascota(this));
+		}
+		if(clase.equals(PantallaAñadirActiviEquipo.class)) {
+			this.setContentPane(new PantallaAñadirActiviEquipo(this));
+		}
 		this.getContentPane().setVisible(true);
 	}
 }

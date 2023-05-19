@@ -41,6 +41,12 @@ public class PantallaPrincipal extends JPanel{
 		panel.add(btnMisActividades);
 		
 		JButton btnAñadirAct = new JButton("Añadir actividad");
+		btnAñadirAct.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.cambiarPantalla(PantallaAñadirActivi.class);
+			}
+		});
 		btnAñadirAct.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel.add(btnAñadirAct);
 		

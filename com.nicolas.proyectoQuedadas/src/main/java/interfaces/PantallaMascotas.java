@@ -7,6 +7,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
+
+import utils.DAO;
+
 import javax.swing.BoxLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -55,9 +58,6 @@ public class PantallaMascotas extends JPanel{
 		lista.setViewportView(listaMascotas);
 		listaMascotas.setLayout(new BoxLayout(listaMascotas, BoxLayout.Y_AXIS));
 		
-		for(byte i=0;i<20;i++) {
-			listaMascotas.add(new ListaMascotas(ventana));
-		}
 	}
 
 }
