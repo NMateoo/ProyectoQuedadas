@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class PantallaActividades extends JPanel{
 	Ventana ventana;
@@ -34,8 +35,11 @@ public class PantallaActividades extends JPanel{
 		textTitulo.setFont(new Font("Tahoma", Font.BOLD, 27));
 		panel_1.add(textTitulo);
 		
-		JTextArea lista = new JTextArea();
+		JScrollPane lista = new JScrollPane();
 		add(lista, BorderLayout.CENTER);
+		
+		JPanel contenedorActividades = new JPanel();
+		lista.setViewportView(contenedorActividades);
 	}
 
 }
