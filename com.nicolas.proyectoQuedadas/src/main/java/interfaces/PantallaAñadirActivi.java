@@ -137,6 +137,7 @@ public class PantallaAñadirActivi extends JPanel{
 		panel_2.add(textMin, gbc_textMin);
 		
 		JSpinner spinnerMin = new JSpinner();
+		spinnerMin.setModel(new SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 		GridBagConstraints gbc_spinnerMin = new GridBagConstraints();
 		gbc_spinnerMin.fill = GridBagConstraints.HORIZONTAL;
 		gbc_spinnerMin.insets = new Insets(0, 0, 5, 5);
@@ -153,6 +154,7 @@ public class PantallaAñadirActivi extends JPanel{
 		panel_2.add(textMax, gbc_textMax);
 		
 		JSpinner spinnerMax = new JSpinner();
+		spinnerMax.setModel(new SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 		GridBagConstraints gbc_spinnerMax = new GridBagConstraints();
 		gbc_spinnerMax.fill = GridBagConstraints.HORIZONTAL;
 		gbc_spinnerMax.insets = new Insets(0, 0, 5, 5);

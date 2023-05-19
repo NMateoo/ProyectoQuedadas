@@ -44,6 +44,9 @@ public class Ventana extends JFrame{
 		if(clase.equals(PantallaAñadirActiviEquipo.class)) {
 			this.setContentPane(new PantallaAñadirActiviEquipo(this));
 		}
+		if(clase.equals(PantallaActividades.class)) {
+			this.setContentPane(new PantallaActividades(this));
+		}
 		this.getContentPane().setVisible(true);
 	}
 }

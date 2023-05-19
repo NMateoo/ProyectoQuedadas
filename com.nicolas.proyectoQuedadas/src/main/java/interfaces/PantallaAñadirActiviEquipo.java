@@ -17,7 +17,7 @@ public class PantallaAñadirActiviEquipo extends JPanel{
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.NORTH);
 		
-		JLabel textTitulo = new JLabel("Crear actividad con equipo");
+		JLabel textTitulo = new JLabel("Crear actividad en equipo");
 		textTitulo.setFont(new Font("Tahoma", Font.BOLD, 27));
 		panel.add(textTitulo);
 		
