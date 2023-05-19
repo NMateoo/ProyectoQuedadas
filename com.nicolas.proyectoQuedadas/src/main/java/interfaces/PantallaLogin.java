@@ -3,14 +3,24 @@ package interfaces;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Insets;
 import javax.swing.JTextField;
+
+import clases.Persona;
+import exceptions.ContraseñaInvalidaException;
+import exceptions.UsuarioNoExisteException;
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 public class PantallaLogin extends JPanel{
 	private Ventana ventana;
@@ -72,6 +82,33 @@ public class PantallaLogin extends JPanel{
 		add(campoContraseña, gbc_campoContraseña);
 		
 		JButton btnIniciar = new JButton("Iniciar sesion");
+		btnIniciar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String email=campoCorreo.getText();
+				String contraseña=new String(campoContraseña.getPassword());
+				System.out.println("Usuario: "+email+"\nContraseña: "+contraseña);
+				
+				try {
+					ventana.personaLogada=new Persona(email,contraseña);
+					ventana.cambiarPantalla(PantallaPrincipal.class);
+					JOptionPane.showMessageDialog(ventana, "Bienvend@ "+ventana.personaLogada.getNombre(),
+							"Inicio de sesion exitoso",JOptionPane.INFORMATION_MESSAGE);
+				} catch (SQLException e1) {
+					JOptionPane.showMessageDialog(ventana, e1.getMessage(), "No se puede conectar a la BD",
+							JOptionPane.ERROR_MESSAGE);
+					e1.printStackTrace();
+				} catch (UsuarioNoExisteException e1) {
+					JOptionPane.showMessageDialog(ventana, "El correo no esta registrado",
+							"Correo no registrado",JOptionPane.ERROR_MESSAGE);
+					e1.printStackTrace();
+				} catch (ContraseñaInvalidaException e1) {
+					JOptionPane.showMessageDialog(ventana, "La contraseña no es correcta",
+							"Contraseña no es correcta",JOptionPane.ERROR_MESSAGE);
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnIniciar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnIniciar = new GridBagConstraints();
 		gbc_btnIniciar.insets = new Insets(0, 0, 5, 5);
@@ -80,6 +117,12 @@ public class PantallaLogin extends JPanel{
 		add(btnIniciar, gbc_btnIniciar);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.cambiarPantalla(PantallaRegistro.class);
+			}
+		});
 		btnRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnRegistrarse = new GridBagConstraints();
 		gbc_btnRegistrarse.insets = new Insets(0, 0, 5, 5);

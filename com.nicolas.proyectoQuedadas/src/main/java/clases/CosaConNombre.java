@@ -1,7 +1,9 @@
 package clases;
 
+import java.sql.SQLException;
+
 public class CosaConNombre {
-	private String nombre;
+	protected String nombre;
 
 	public CosaConNombre(String nombre) {
 		super();
@@ -12,7 +14,7 @@ public class CosaConNombre {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) throws SQLException {
 		this.nombre = nombre;
 	}
 
