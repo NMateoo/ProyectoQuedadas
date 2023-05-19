@@ -25,6 +25,12 @@ public class PantallaMascotas extends JPanel{
 		add(panel, BorderLayout.SOUTH);
 		
 		JButton btnAñadirMacota = new JButton("Añadir mascota");
+		btnAñadirMacota.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.cambiarPantalla(PantallaAñadirMascota.class);
+			}
+		});
 		btnAñadirMacota.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel.add(btnAñadirMacota);
 		

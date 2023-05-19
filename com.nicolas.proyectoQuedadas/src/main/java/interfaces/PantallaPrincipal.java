@@ -44,6 +44,16 @@ public class PantallaPrincipal extends JPanel{
 		btnAñadirAct.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel.add(btnAñadirAct);
 		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+			}
+		});
+		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panel.add(btnSalir);
+		
 		JScrollPane lista = new JScrollPane();
 		add(lista, BorderLayout.CENTER);
 		
