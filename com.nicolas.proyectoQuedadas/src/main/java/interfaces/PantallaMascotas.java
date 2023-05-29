@@ -37,10 +37,6 @@ public class PantallaMascotas extends JPanel{
 		btnAñadirMacota.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel.add(btnAñadirMacota);
 		
-		JButton btnEliminarMascota = new JButton("Eliminar mascota");
-		btnEliminarMascota.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panel.add(btnEliminarMascota);
-		
 		JButton btnAtras = new JButton("Volver");
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
